@@ -1,0 +1,37 @@
+definitions:
+  Form Parameter:
+    properties:
+      Form parameter:
+        default: Successfull
+        type: string
+    type: object
+host: staging-integration.sandbox.cloud.tibcoapps.com:443
+info:
+  title: APISpecs_withFormParameter
+  version: 1.0.0
+  x-lastModified: Jan 15, 2017 22:41PM PST
+paths:
+  /form:
+    post:
+      consumes:
+      - multipart/form-data
+      parameters:
+      - description: file parameter
+        format: text
+        in: formData
+        name: file
+        required: false
+        type: file
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Success response
+          examples:
+            application/json:
+              Form parameter: Successfull
+          schema:
+            $ref: '#/definitions/Form Parameter'
+schemes:
+- https
+swagger: "2.0"
